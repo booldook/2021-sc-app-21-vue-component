@@ -1,5 +1,8 @@
 <template>
 	<div class="app-wrapper">
+		<h1 class="alert alert-secondary logo-wrap">
+			<img src="@/assets/img/logo.png" alt="logo" class="logo"> VUE Gallery
+		</h1>
 		<ImgCp :title="title" :src="src" />
 		<ul class="thumb-wrap">
 			<ThumbCp v-for="v in foods" :key="v.id" :img="v" @@change="onChange"/>
@@ -48,6 +51,12 @@ export default {
 .app-wrapper {
 	max-width: $wrapper-width;
 	margin: 2em auto 1em auto;
+	.logo-wrap {
+		font-size: 1.25em;
+		.logo {
+			width: 30px;
+		}
+	}
 	.thumb-wrap {
 		border: 1px solid $primary-color;
 		border-radius: .325em;
