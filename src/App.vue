@@ -45,18 +45,14 @@ export default {
 </script>
 
 <style lang="scss">
-ul, ol {
-	list-style: none;
-}
 .app-wrapper {
-	max-width: 400px;
+	max-width: $wrapper-width;
 	margin: 2em auto 1em auto;
 	.thumb-wrap {
-		border: 1px solid #efefef;
+		border: 1px solid $primary-color;
 		border-radius: .325em;
 		padding: .5em;
-		display: flex;
-		width: 101%;
+		@include flex($jc: space-between)
 	}
 }
 </style>
