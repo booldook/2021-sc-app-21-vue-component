@@ -1,13 +1,14 @@
 <template>
 	<div class="img-wrapper">
-		<img src="/img/f1.jpg" alt="아이스크림" class="w-100">
-		<div class="title-wrap">아이스크림</div>
+		<img :src="src" alt="아이스크림" class="w-100">
+		<div class="title-wrap">{{ title }}</div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'ImgCp'
+	name: 'ImgCp',
+	props: ['title', 'src']
 }
 </script>
 
@@ -17,6 +18,7 @@ export default {
 	padding: .5em;
 	border-radius: .325em;
 	position: relative;
+	margin-bottom: 1em;
 	img {
 		opacity: 1;
 		transition: all .5s;
