@@ -2,7 +2,7 @@
 	<div class="app-wrapper">
 		<ImgCp :title="title" :src="src" />
 		<ul class="thumb-wrap">
-			<ThumbCp v-for="v in foods" :key="v.id" :img="v" />
+			<ThumbCp v-for="v in foods" :key="v.id" :img="v" @@change="onChange"/>
 		</ul>
 	</div>
 </template>
@@ -11,6 +11,8 @@
 /* 
 1. 부모 컴포넌트가 자식 컴포넌트에게 변수를 전달할 때는 v-bind로 전달한다.
 2. 자식 컴포넌트는 부모로 부터 props로 변수를 전달받는다.
+3. 자식 컴포넌트가 부모 컴포넌트에게 변수를 전달할 때는 이벤트로 전달한다.
+4. 부모 컴포넌트는 자식으로 부터 v-on으로 이벤트를 통한 변수를 전달받는다.
 */
 
 import axios from 'axios'
@@ -25,6 +27,12 @@ export default {
 			foods: [],
 			title: '',
 			src: '',
+		}
+	},
+	methods: {
+		onChange(v) {
+			this.src = v.src
+			this.title = v.title
 		}
 	},
 	async created() {
